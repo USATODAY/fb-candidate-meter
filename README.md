@@ -26,7 +26,7 @@ Once those dependencies are set up, from this repository run `npm install`, then
 This app has some a `config` javascript module that detects the environment the app is running in on USA TODAY's platform.
 
 Once the `config` module is required, there are several properties and methods that can be used:
-```
+```JavaScript
 define([config], function(config) {
     //boolean value 
     config.isMobile;
