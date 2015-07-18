@@ -1,17 +1,16 @@
 define(
-  [
+    [
     'jquery',
     'underscore',
-    'templates'
-  ],
-  function(jQuery, _, templates){
-    var app = app || {};
-
-    app.init = function() {
-      console.log("app initialized");
-      jQuery("body").append(templates["template.html"]({test: "Hello world!"}));
+    'templates',
+    'config'
+    ],
+    function(jQuery, _, templates, config){
+    
+    return {
+        init: function() {
+            console.log(config);
+        }
     };
-
-    return app;
 
 });
