@@ -5,12 +5,13 @@ define(["jquery"], function(jQuery) {
 
     //set project data URL here
     var dataURL = "";
+    var dataDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/fb-meter/data/";
     //set project image path here
-    var imagePath = "";
+    var imageDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/fb-meter/img/";
 
     //set project default share language here
     var defaultShareLanguage = "";
-    var defaultShareImage = imagePath + "fb-post.jpg";
+    var defaultShareImage = imageDir + "fb-post.jpg";
 
     /******
      * Detect app environment.
@@ -75,8 +76,9 @@ define(["jquery"], function(jQuery) {
 
 
     return {
-        image_path: imagePath,
+        imageDir: imageDir,
         dataURL: dataURL,
+        dataDir: dataDir,
         staticInfo: _getStaticInfo(),
         fb_app_id: _getFbAppId(),
         isMobile: _getIsMobile(),
