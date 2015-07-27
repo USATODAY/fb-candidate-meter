@@ -39,7 +39,7 @@ define([
             dataManager.getData(function(data) {
                 var props = _.omit(data, 'weekly_entries');
                 var entryCollection = new EntryCollection(data.weekly_entries, {props: props});
-                this.entryCollection = entryCollection;
+                _this.entryCollection = entryCollection;
             });
         },
         _getDetailDataFile: function() {

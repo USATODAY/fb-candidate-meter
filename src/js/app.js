@@ -15,7 +15,10 @@ define(
         init: function() {
             var overviewData = new DataManager(config.dataDir + "data.json");
             overviewData.getData(function(data) {
-                var politicianCollection = new PoliticianCollection(data.politicians);
+                var sortedPoliticians = _.sortBy(data.politicians, function(politician) {
+                    return politician.latest_interactions_trend;
+                });
+                var politicianCollection = new PoliticianCollection(sortedPoliticians);
                 new AppView({collection: politicianCollection});
             });
         }

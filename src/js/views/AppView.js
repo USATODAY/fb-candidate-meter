@@ -12,7 +12,10 @@ define([
         },
         el: '.iapp-js-app',
         render: function() {
-            var politicianIndexView = new PoliticianIndexView({collection: this.collection});
+            // var politicianIndexView = new PoliticianIndexView({collection: this.collection});
+            // this.$el.append(politicianIndexView.render().el);
+            console.log(this.collection);
+            // var entriesView = new EntriesView({});
         }
     });
 });

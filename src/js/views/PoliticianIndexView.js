@@ -3,15 +3,24 @@ define([
     'underscore', 
     'backbone',
     'config', 
-    'templates'
-], function(jQuery, _, Backbone, config, templates) {
+    'templates',
+    'views/PoliticianItemView'
+], function(jQuery, _, Backbone, config, templates, PoliticianItemView) {
     return Backbone.View.extend({
         initialize: function() {
-            console.log(this.collection.toJSON());
         },
         template: templates["politicianIndex.html"],
+        className: "iapp-politician-index",
         render: function() {
-        
+            this.$el.html(this.template());
+            this.collection.each(this.renderSubView.bind(this));
+            return this;
+        },
+        renderSubView: function(model) {
+            var politicianItemView = new PoliticianItemView({model: model});
+            this.$('.iapp-politician-index-wrap').append(politicianItemView.render().el);
+            
         }
+
     });
 });
