@@ -1,0 +1,19 @@
+.iapp-politician-index-item {
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+    width: 100px;
+}
+
+.iapp-politician-item-portrait {
+    background-color: $medium-grey;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.iapp-politician-header {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+}

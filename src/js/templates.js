@@ -6,7 +6,7 @@ this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2>Politician Index</h2>\n<div class="iapp-politician-index-wrap"></div>\n';
+__p += '<h2>Politician Index</h2>\n<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-show-button">See all candidates</div>\n';
 
 }
 return __p
@@ -16,9 +16,9 @@ this["templates"]["politicianIndexItem.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-item">\n    <h3 class="iapp-politician-header">' +
+__p += '<div class="iapp-politician-item-portrait">\n    <div class="iapp-politician-item-portrait-inner"></div>\n</div>\n<h3 class="iapp-politician-header">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h3>\n</div>\n';
+'</h3>\n';
 
 }
 return __p

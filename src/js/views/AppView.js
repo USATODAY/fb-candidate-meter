@@ -4,8 +4,9 @@ define([
     'backbone',
     'config', 
     'templates',
-    'views/PoliticianIndexView'
-], function(jQuery, _, Backbone, config, templates, PoliticianIndexView) {
+    'views/PoliticianIndexView',
+    'views/EntriesView',
+], function(jQuery, _, Backbone, config, templates, PoliticianIndexView, EntriesView) {
     return Backbone.View.extend({
         initialize: function() {
             this.render();
@@ -14,8 +15,9 @@ define([
         render: function() {
             // var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             // this.$el.append(politicianIndexView.render().el);
-            console.log(this.collection);
-            // var entriesView = new EntriesView({});
+            var testPolitician = this.collection.models[0];
+            var testEntriesView = new EntriesView({model: testPolitician});
+            this.$el.append(testEntriesView.el);
         }
     });
 });

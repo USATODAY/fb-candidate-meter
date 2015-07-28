@@ -9,7 +9,7 @@ define([
         initialize: function() {
         },
         template: templates["politicianIndexItem.html"],
-        className: "iapp-politician-index-item-wrap",
+        className: "iapp-politician-index-item",
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
             return this;
