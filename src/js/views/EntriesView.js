@@ -5,7 +5,8 @@ define([
     'config', 
     'templates',
     'velocity',
-], function(jQuery, _, Backbone, config, templates, Velocity) {
+    'views/EntryView'
+], function(jQuery, _, Backbone, config, templates, Velocity, EntryView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(this.model, "change:entryCollection", this.render);
@@ -13,18 +14,21 @@ define([
             this.render();
         },
         render: function() {
-            var entryCollection = this.model.get("entryCollection");
+            this.entryCollection = this.model.get("entryCollection");
             var _this = this;
-            if (entryCollection === null) {
-                _this.$el.html("loading...");
+            if (this.entryCollection === null) {
+                this.$el.html("loading...");
             } else {
                 //render entries
-                _this.$el.empty();
-                var latestEntry = entryCollection.models[entryCollection.length - 1];
-
-
+                this.$el.empty();
+                this.currentEntry = this.entryCollection.models[this.currentEntryIndex];
+                var entryView = new EntryView({model: this.currentEntry});
+                this.$el.append(entryView.el);
             }
             return this;
-        }
+        },
+        entryCollection: null,
+        currentEntry: null,
+        currentEntryIndex: 0
     });
 });

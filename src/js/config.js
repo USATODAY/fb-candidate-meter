@@ -13,6 +13,11 @@ define(["jquery"], function(jQuery) {
     var defaultShareLanguage = "";
     var defaultShareImage = imageDir + "fb-post.jpg";
 
+    var chartColors = {
+        "republican": ["#F47F6E", "#EB1E00"],
+        "democrat":  ["#6BB9EB", "#009BFF"]
+    };
+
     /******
      * Detect app environment.
      * Returns boolean values for isMobile, isTablet, and isEmbed.
@@ -86,6 +91,7 @@ define(["jquery"], function(jQuery) {
         defaultShareLanguage: defaultShareLanguage,
         defaultShareImage: defaultShareImage,
         isEmbed: _getIsEmbed(),
-        getModuleType: _getModuleType
+        getModuleType: _getModuleType,
+        chartColors: chartColors
     };
 });

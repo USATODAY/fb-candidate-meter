@@ -16,6 +16,7 @@ define([
             "name": null,
             "slug": null,
             "image": null,
+            "party": null,
 
             /***
              * holds collection of entries
@@ -38,6 +39,7 @@ define([
             var dataManager = new DataManager(entriesDataFile);
             dataManager.getData(function(data) {
                 var props = _.omit(data, 'weekly_entries');
+                _.extend(props, {party: _this.get("party")});
                 var entryCollection = new EntryCollection(data.weekly_entries, {props: props});
                 _this.set({entryCollection: entryCollection});
             });

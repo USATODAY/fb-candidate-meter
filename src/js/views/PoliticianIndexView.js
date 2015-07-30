@@ -28,8 +28,15 @@ define([
         showAll: function() {
             //animate to show all
             var newHeight = window.innerHeight;
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": newHeight}, {duration: 800, easing: "swing"});
-        }
+            if (this._expanded) {
+                this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 800, easing: "swing"});
+                this._expanded = false;
+            } else {
+                this.$('.iapp-politician-index-wrap').velocity({"max-height": newHeight}, {duration: 800, easing: "swing"});
+                this._expanded = true;
+            }
+        },
+        _expanded: false
 
     });
 });

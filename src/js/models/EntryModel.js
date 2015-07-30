@@ -31,12 +31,23 @@ define([
             //float
             women_percent: null,
             //float
-            women_percent_diff: null
+            women_percent_diff: null,
+
+            //string inherits from collection
+            name: null,
+            
+            //string inherits from collection
+            slug: null
 
         },
         initialize: function(attrs, options) {
             var dateObj = this._getDate(attrs.date);
-            this.set({'dateObj': dateObj});
+            this.set({
+                'dateObj': dateObj,
+                'name': options.props.name,
+                'slug': options.props.slug,
+                'party': options.props.party
+            });
         },
         _getDate: function(dateString) {
             var dateArray = dateString.split("-");

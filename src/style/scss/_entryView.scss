@@ -1,0 +1,23 @@
+.iapp-entry-details {
+    background: $extra-light-grey;
+    display: table-cell;
+    float: right;
+    padding: 30px;
+    min-width: 400px;
+}
+
+.iapp-entry-details-subheader {
+    border-bottom: solid 1px $dark-grey;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 0;
+}
+
+.iapp-entry-details-large-number {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.iapp-entry-details-demographics-overall {
+    background-color: $light-grey;
+}
