@@ -1,9 +1,22 @@
+.iapp-entries-wrap {
+    height: 787px;
+    position: absolute;
+    top: 190px;
+    width: 100%;
+}
+
 .iapp-entry-details {
     background: $extra-light-grey;
     display: table-cell;
     float: right;
     padding: 30px;
     width: 305px;
+    height: 100%;
+
+    @media (max-width: 959px) {
+        height: 300px;
+        width: 100%;
+    }
 }
 
 .iapp-entry-details-subheader {
@@ -24,9 +37,9 @@
 }
 
 .iapp-entry-details-demographics-overview-bar {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .iapp-entry-details-demographics-overall-headers {
@@ -42,17 +55,29 @@
 .iapp-entry-details-trend {
     font-family: "Futura Today Light", Arial, sans-serif;
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.iapp-entries-wrap {
-    position: absolute;
-    top: 190px;
-    width: 100%;
+
+.iapp-entry-wrapper {
+    height: 100%;
 }
 
 .iapp-entry-details-demographics {
     border: solid 1px $light-grey;
+    width: 245px;
+
+    @media (max-width: 959px) {
+        float: right;
+    }
+}
+
+.iapp-detail-summary {
+    max-width: 300px;
+
+    @media (max-width: 959px) {
+        float: left;
+    }
 }
 
 .iapp-entry-details-demographics svg {
@@ -68,4 +93,9 @@
 .democrat {
     .iapp-demo-headers-female {color: $blue1;}
     .iapp-demo-headers-male {color: $blue2;}
+}
+
+.iapp-entry-map {
+    float: left;
+    width: 655px;
 }

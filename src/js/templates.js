@@ -9,19 +9,19 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<section class="iapp-entry-details ' +
 ((__t = ( party )) == null ? '' : __t) +
-'">\n    <h2 class="iapp-entry-details-header">' +
+'">\n    <div class="iapp-detail-summary">\n        <h2 class="iapp-entry-details-header">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h2>\n    <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>\n    <h3 class="iapp-entry-details-large-number">';
+'</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>\n        <h3 class="iapp-entry-details-large-number">';
  print(interactions.toLocaleString()) ;
-__p += '</h3>\n    <div class="iapp-entry-details-trend">\n        <img class="iapp-details-trend-icon" src="';
+__p += '</h3>\n        <div class="iapp-entry-details-trend">\n            <img class="iapp-details-trend-icon" src="';
  print(config.imageDir + trend);
 __p += '.png" alt="' +
 ((__t = ( trend )) == null ? '' : __t) +
-'"></span>\n        <span class="iapp-details-trend-detail">';
+'"></span>\n            <span class="iapp-details-trend-detail">';
  trend == "down" ? print("Decreased") : print("Increased");
 __p += ' by ';
  print(Math.abs(total_interactions_diff).toLocaleString()) ;
-__p += '</span>\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
+__p += '</span>\n        </div>\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
 
 }
 return __p

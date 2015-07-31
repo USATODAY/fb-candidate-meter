@@ -24,10 +24,11 @@ define(
         },
         drawMap: function() {
             var statesData = this.model.get("states");
+            console.log(this.el);
             var $el = this.$el;
 
             var width = 580,
-                height = 500;
+                height = 480;
 
             var chartColors = config.chartColors[this.model.get("party")];
 
@@ -56,7 +57,7 @@ define(
                         var fill = "#F3F3F3";
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        console.log(stateData);
+                        // console.log(stateData);
                         return fill;
                     })
                     .attr("stroke-width", "2px")

@@ -17,7 +17,7 @@ define([
             var context = helpers.makeContext(this.model.toJSON());
             this.$el.append(this.template(context));
             this.mapView = new MapView({model: this.model});
-            this.$el.append(this.mapView.el);
+            this.$el.prepend(this.mapView.el);
             this.drawDemoOverview();
             this.drawDemoDetails();
             return this;
@@ -27,9 +27,10 @@ define([
             var party = this.model.get("party");
             return config.chartColors[party];
         },
+        className: "iapp-entry-wrapper",
         _barDimensions: {
             width: 200,
-            height: 200,
+            height: 180,
             barHeight: 20,
             leftPadding: 35,
             rightPadding: 35
