@@ -7,7 +7,9 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<section class="iapp-entry-details">\n    <h2 class="iapp-entry-details-header">' +
+__p += '<section class="iapp-entry-details ' +
+((__t = ( party )) == null ? '' : __t) +
+'">\n    <h2 class="iapp-entry-details-header">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n    <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>\n    <h3 class="iapp-entry-details-large-number">';
  print(interactions.toLocaleString()) ;

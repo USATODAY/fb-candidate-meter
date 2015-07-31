@@ -30,7 +30,9 @@ define(["jquery"], function(jQuery) {
      *****/
 
     function _getIsEmbed() {
-        return window != window.parent;
+        console.warn("temporary development settings => embed: true");
+        // return window != window.parent;
+        return true;
     }
 
     function _getStaticInfo() {

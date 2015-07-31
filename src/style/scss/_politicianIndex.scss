@@ -6,6 +6,15 @@
     overflow: hidden;
 }
 
+
+.iapp-politician-index {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
 .iapp-politician-index-show-button {
     background-color: $blue;
     color: white;

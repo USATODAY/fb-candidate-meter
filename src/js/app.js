@@ -19,9 +19,9 @@ define(
                     return - politician.latest_interactions_trend;
                 });
                 var politicianCollection = new PoliticianCollection(sortedPoliticians);
-                console.log(politicianCollection.where({party: null}));
-                console.log(politicianCollection);
                 new AppView({collection: politicianCollection});
+
+                console.log(config.getModuleType());
             });
         }
     };

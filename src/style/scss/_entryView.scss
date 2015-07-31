@@ -3,7 +3,7 @@
     display: table-cell;
     float: right;
     padding: 30px;
-    min-width: 400px;
+    width: 305px;
 }
 
 .iapp-entry-details-subheader {
@@ -20,4 +20,52 @@
 
 .iapp-entry-details-demographics-overall {
     background-color: $light-grey;
+    padding-top: 10px;
+}
+
+.iapp-entry-details-demographics-overview-bar {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.iapp-entry-details-demographics-overall-headers {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1em;
+    text-align: center;
+
+    span {
+        margin: 5px;
+    }
+}
+
+.iapp-entry-details-trend {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.iapp-entries-wrap {
+    position: absolute;
+    top: 190px;
+    width: 100%;
+}
+
+.iapp-entry-details-demographics {
+    border: solid 1px $light-grey;
+}
+
+.iapp-entry-details-demographics svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.republican {
+    .iapp-demo-headers-female {color: $red1;}
+    .iapp-demo-headers-male {color: $red2;}
+}
+
+.democrat {
+    .iapp-demo-headers-female {color: $blue1;}
+    .iapp-demo-headers-male {color: $blue2;}
 }

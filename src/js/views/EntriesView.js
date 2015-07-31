@@ -13,6 +13,7 @@ define([
             this.model.getEntries();
             this.render();
         },
+        className: "iapp-entries-wrap",
         render: function() {
             this.entryCollection = this.model.get("entryCollection");
             var _this = this;
