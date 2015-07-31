@@ -42,13 +42,15 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-politician-item-portrait">\n    <div class="iapp-politician-item-portrait-inner">\n        <img src="';
- print(config.imageDir + "/candidates/" + slug + ".png") ;
+__p += '<div class="iapp-politician-item-portrait ' +
+((__t = ( party )) == null ? '' : __t) +
+'">\n    <div class="iapp-politician-item-portrait-inner">\n        <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".jpg") ;
 __p += '" alt="' +
 ((__t = ( name )) == null ? '' : __t) +
-'">\n    </div>\n    <img class="iapp-politician-item-trend" src="';
+'">\n    </div>\n</div>\n<img class="iapp-politician-item-trend" src="';
  print(config.imageDir +  trend + "." + party.slice(0, 3) + ".png")  ;
-__p += '" alt="">\n</div>\n<h3 class="iapp-politician-header">' +
+__p += '" alt="">\n<h3 class="iapp-politician-header">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h3>\n';
 

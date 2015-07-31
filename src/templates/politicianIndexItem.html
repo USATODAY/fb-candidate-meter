@@ -1,7 +1,7 @@
-<div class="iapp-politician-item-portrait">
+<div class="iapp-politician-item-portrait <%= party %>">
     <div class="iapp-politician-item-portrait-inner">
-        <img src="<% print(config.imageDir + "/candidates/" + slug + ".png") %>" alt="<%= name %>">
+        <img src="<% print(config.imageDir + "/candidates/" + slug + ".jpg") %>" alt="<%= name %>">
     </div>
-    <img class="iapp-politician-item-trend" src="<% print(config.imageDir +  trend + "." + party.slice(0, 3) + ".png")  %>" alt="">
 </div>
+<img class="iapp-politician-item-trend" src="<% print(config.imageDir +  trend + "." + party.slice(0, 3) + ".png")  %>" alt="">
 <h3 class="iapp-politician-header"><%= name %></h3>

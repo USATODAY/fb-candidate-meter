@@ -1,18 +1,32 @@
+$itemSize: 50px;
+
 .iapp-politician-index-item {
     cursor: pointer;
     margin: 20px;
     position: relative;
     text-align: center;
-    width: 50px;
+    width: $itemSize;
 }
 
 .iapp-politician-item-portrait {
-    height: 50px;
+    border-radius: 50%;
+    height: $itemSize;
+    overflow: hidden;
     position: relative;
-    width: 50px;
+    width: $itemSize;
     img {
         max-width: 100%;
     }
+
+    &.republican {border: solid 3px $red2;}
+    &.democrat {border: solid 3px $blue2;}
+}
+
+.iapp-politician-item-portrait-inner {
+    // border: solid 2px white;
+    // border-radius: 50%;
+    // height: $itemSize;
+    // width: $itemSize;
 }
 
 .iapp-politician-header {
@@ -22,7 +36,7 @@
 }
 
 .iapp-politician-item-trend {
-    bottom: 0;
     position: absolute;
     right: 0;
+    top: 30px;
 }
