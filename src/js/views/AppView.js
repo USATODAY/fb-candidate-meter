@@ -16,7 +16,7 @@ define([
         render: function() {
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
-            var testPolitician = this.collection.models[4];
+            var testPolitician = this.collection.models[0];
             this.setPolitician(testPolitician);
         },
         setPolitician: function(politicianModel) {

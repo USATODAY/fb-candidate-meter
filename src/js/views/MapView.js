@@ -57,7 +57,14 @@ define(
                         var fill = "#F3F3F3";
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        // console.log(stateData);
+                        console.log(stateData);
+                        if (stateData.diff > 0) {
+                            fill = chartColors[0];
+                        } 
+                        if (stateData.diff > 1){
+                            fill = chartColors[1];
+                        }
+
                         return fill;
                     })
                     .attr("stroke-width", "2px")
