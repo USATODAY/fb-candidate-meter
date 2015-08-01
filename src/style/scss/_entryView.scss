@@ -13,7 +13,7 @@
     width: 305px;
     height: 100%;
 
-    @media (max-width: 959px) {
+    @media (max-width: 950px) {
         height: 300px;
         width: 100%;
     }
@@ -67,7 +67,7 @@
     border: solid 1px $light-grey;
     width: 245px;
 
-    @media (max-width: 959px) {
+    @media (max-width: 950px) {
         float: right;
     }
 }
@@ -75,7 +75,7 @@
 .iapp-detail-summary {
     max-width: 300px;
 
-    @media (max-width: 959px) {
+    @media (max-width: 950px) {
         float: left;
     }
 }
@@ -97,5 +97,5 @@
 
 .iapp-entry-map {
     float: left;
-    width: 655px;
+    width: 654px;
 }
