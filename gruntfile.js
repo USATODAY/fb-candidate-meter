@@ -23,7 +23,8 @@ module.exports = function(grunt) {
     "d3": '../../bower_components/d3/d3',
     "angular": '../../bower_components/angular/angular',
     "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
-    "velocity": '../../bower_components/velocity/velocity'
+    "velocity": '../../bower_components/velocity/velocity',
+    'moment': '../../bower_components/moment/moment'
   };
 
   var require_shim = {

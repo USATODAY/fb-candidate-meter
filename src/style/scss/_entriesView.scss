@@ -1,0 +1,23 @@
+.iapp-entries-date-wrap {
+    background-color: $extra-light-grey;
+    padding: 5px 0;
+}
+
+.iapp-entries-date-inner-wrap {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+}
+
+.iapp-entries-date-selector {
+    cursor: pointer;
+}
+
+.iapp-entries-date-previous {
+    float: left;
+}
+
+.iapp-entries-date-next {
+    float: right;
+}

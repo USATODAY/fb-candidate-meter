@@ -23,6 +23,7 @@ define(
             this.drawMap();
         },
         drawMap: function() {
+            var _this = this;
             var statesData = this.model.get("states");
             var $el = this.$el;
 
@@ -63,10 +64,11 @@ define(
                         var fill = lightGreyColor;
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        if (stateData.diff > 0) {
+                        var diff = _this._roundNumber(stateData.diff);
+                        if (diff > 0) {
                             fill = chartColors[0];
                         } 
-                        if (stateData.diff > 1){
+                        if (diff > 1){
                             fill = chartColors[1];
                         }
 
@@ -83,13 +85,13 @@ define(
                     .on("mouseover", function(d) {
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        var interactionsPretty = Math.round(stateData.diff * 10)/10;
+                        var interactionsPretty = _this._roundNumber(stateData.diff);
                         if (interactionsPretty >= 0) {
                             interactionsPretty = "+" + interactionsPretty;
                         } 
                         d3.select("#iapp-map-tooltip")
                             .style("left", (d3.event.pageX - 100) + "px")
-                            .style("top", (d3.event.pageY - 70) + "px")
+                            .style("top", (d3.event.pageY - 60) + "px")
                             .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Total Interactions: " + interactionsPretty + "%</div>")
                             .classed("iapp-hidden", false);
                     })
@@ -149,6 +151,9 @@ define(
             });
 
 
+        },
+        _roundNumber: function(num) {
+            return Math.round(num * 10) / 10;
         }
     });
 

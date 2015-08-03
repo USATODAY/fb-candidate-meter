@@ -2,15 +2,16 @@ $itemSize: 50px;
 
 .iapp-politician-index-item {
     cursor: pointer;
-    margin: 20px;
+    margin: 10px;
     position: relative;
     text-align: center;
-    width: $itemSize;
+    width: 100px;
 }
 
 .iapp-politician-item-portrait {
     border-radius: 50%;
     height: $itemSize;
+    margin: 0 auto;
     overflow: hidden;
     position: relative;
     width: $itemSize;
@@ -37,6 +38,6 @@ $itemSize: 50px;
 
 .iapp-politician-item-trend {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 30px;
 }

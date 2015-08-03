@@ -13,7 +13,7 @@ __p += '<section class="iapp-entry-details ' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>\n        <h3 class="iapp-entry-details-large-number">';
  print(interactions.toLocaleString()) ;
-__p += '</h3>\n        <div class="iapp-entry-details-trend">\n            <img class="iapp-details-trend-icon" src="';
+__p += ' <span class="iapp-entry-details-large-number-unit">interactions</span></h3>\n        <div class="iapp-entry-details-trend">\n            <img class="iapp-details-trend-icon" src="';
  print(config.imageDir + trend);
 __p += '.png" alt="' +
 ((__t = ( trend )) == null ? '' : __t) +
@@ -22,6 +22,31 @@ __p += '.png" alt="' +
 __p += ' by ';
  print(Math.abs(total_interactions_diff).toLocaleString()) ;
 __p += '</span>\n        </div>\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
+
+}
+return __p
+};
+
+this["templates"]["entriesView.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="iapp-entries-date-wrap">\n    <div class="iapp-entries-date-inner-wrap">\n        ';
+ if (showPrevious) {;
+__p += '\n        <span class="iapp-entries-date-previous iapp-entries-date-selector"><img src="';
+ print(config.imageDir + "left.png");
+__p += '" alt="left"></span>\n        ';
+};
+__p += '\n        <span class="iapp-entries-date">Week of ' +
+((__t = ( date )) == null ? '' : __t) +
+'</span> \n        ';
+ if (showNext) {;
+__p += '\n        <span class="iapp-entries-date-next iapp-entries-date-selector"><img src="';
+ print(config.imageDir + "right.png");
+__p += '" alt="right"></span>\n        ';
+};
+__p += '\n    </div>\n</div>\n';
 
 }
 return __p

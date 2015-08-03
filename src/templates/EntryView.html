@@ -2,7 +2,7 @@
     <div class="iapp-detail-summary">
         <h2 class="iapp-entry-details-header"><%= name %></h2>
         <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>
-        <h3 class="iapp-entry-details-large-number"><% print(interactions.toLocaleString()) %></h3>
+        <h3 class="iapp-entry-details-large-number"><% print(interactions.toLocaleString()) %> <span class="iapp-entry-details-large-number-unit">interactions</span></h3>
         <div class="iapp-entry-details-trend">
             <img class="iapp-details-trend-icon" src="<% print(config.imageDir + trend)%>.png" alt="<%= trend %>"></span>
             <span class="iapp-details-trend-detail"><% trend == "down" ? print("Decreased") : print("Increased")%> by <% print(Math.abs(total_interactions_diff).toLocaleString()) %></span>

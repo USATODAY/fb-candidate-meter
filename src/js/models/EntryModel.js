@@ -52,7 +52,7 @@ define([
         _getDate: function(dateString) {
             var dateArray = dateString.split("-");
             var year = dateArray[0];
-            var month = dateArray[1];
+            var month = dateArray[1] - 1;
             var date = dateArray[2];
             var dateObj = new Date(year, month, date);
             return dateObj;

@@ -38,6 +38,10 @@
     margin: 10px 0;
 }
 
+.iapp-entry-details-large-number-unit {
+    font-size: 0.5em;
+}
+
 .iapp-entry-details-demographics-overall {
     background-color: $light-grey;
     padding-top: 10px;
@@ -126,11 +130,12 @@
 .iapp-tooltip-state {
     border-bottom: solid 1px white;
     font-family: "Futura Today Light", Arial, sans-serif;
-    font-size: 1em;
+    font-size: 0.8em;
     margin: 0;
 }
 
 .iapp-tooltip-interactions {
+    font-size: 0.8em;
     marign: 0;
 }
 
