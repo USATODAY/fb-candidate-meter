@@ -40,7 +40,7 @@ define([
             var dimensions = this._barDimensions;
             var el = d3.select($el[0]);
 
-            var colors = this._getChartColors();
+            var colors = ["#6D6E70", "#4A4A4A"];
 
             var svg = el.append('svg')
                 .attr("width", dimensions.width)
@@ -98,7 +98,7 @@ define([
             var $el = this.$('.iapp-js-entry-demo-details'),
             dimensions = this._barDimensions,
             el = d3.select($el[0]),
-            colors = this._getChartColors();
+            colors = ["#6D6E70", "#4A4A4A"];
             
             var x = d3.scale.linear()
                 .domain([0, 100])

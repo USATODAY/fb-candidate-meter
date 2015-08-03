@@ -19,6 +19,13 @@
     }
 }
 
+.iapp-entry-details-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+}
+
+.republican .iapp-entry-details-header { color: $red2; }
+.democrat .iapp-entry-details-header { color: $blue2; }
+
 .iapp-entry-details-subheader {
     border-bottom: solid 1px $dark-grey;
     font-family: "Futura Today Light", Arial, sans-serif;
@@ -85,17 +92,17 @@
     margin: 0 auto;
 }
 
-.republican {
-    .iapp-demo-headers-female {color: $red1;}
-    .iapp-demo-headers-male {color: $red2;}
-}
 
-.democrat {
-    .iapp-demo-headers-female {color: $blue1;}
-    .iapp-demo-headers-male {color: $blue2;}
-}
+.iapp-demo-headers-female {color: $medium-grey;}
+.iapp-demo-headers-male {color: $dark-grey;}
+
 
 .iapp-entry-map {
     float: left;
     width: 654px;
+}
+
+.iapp-entry-map-svg {
+    display: block;
+    margin: 0 auto;
 }

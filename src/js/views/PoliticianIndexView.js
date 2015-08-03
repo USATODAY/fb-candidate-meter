@@ -9,6 +9,7 @@ define([
 ], function(jQuery, _, Backbone, config, templates, Velocity, PoliticianItemView) {
     return Backbone.View.extend({
         initialize: function() {
+            this.listenTo(Backbone, "menu:close", this.unExpand);
         },
         template: templates["politicianIndex.html"],
         className: "iapp-politician-index",
@@ -23,18 +24,24 @@ define([
             
         },
         events: {
-            "click .iapp-politician-index-show-button": "showAll"
+            "click .iapp-politician-index-show-button": "toggleExpand"
         },
-        showAll: function() {
-            //animate to show all
-            var newHeight = window.innerHeight;
+        toggleExpand: function() {
             if (this._expanded) {
-                this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 800, easing: "swing"});
-                this._expanded = false;
+                this.unExpand();
             } else {
-                this.$('.iapp-politician-index-wrap').velocity({"max-height": newHeight}, {duration: 800, easing: "swing"});
-                this._expanded = true;
+                this.expand();
             }
+        },
+        expand: function() {
+            //animate to show all
+            var newHeight = 500;
+            this.$('.iapp-politician-index-wrap').velocity({"max-height": newHeight}, {duration: 800, easing: "swing"});
+            this._expanded = true;
+        },
+        unExpand: function() {
+            this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 800, easing: "swing"});
+            this._expanded = false;
         },
         _expanded: false
 

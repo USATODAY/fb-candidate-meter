@@ -21,6 +21,7 @@ define([
         },
         onClick: function() {
             Backbone.trigger("politician:set", this.model);
+            Backbone.trigger("menu:close", this.model);
         }
     });
 });

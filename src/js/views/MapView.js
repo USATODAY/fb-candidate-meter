@@ -24,13 +24,16 @@ define(
         },
         drawMap: function() {
             var statesData = this.model.get("states");
-            console.log(this.el);
             var $el = this.$el;
 
             var width = 580,
-                height = 480;
+                height = 480,
+                padding = 50;
 
             var chartColors = config.chartColors[this.model.get("party")];
+            var keySize = 16;
+
+            var lightGreyColor = "#F3F3F3";
 
             var projection = d3.geo.albersUsa()
                 .scale(800)
@@ -41,7 +44,8 @@ define(
 
             var svg = this.svg = d3.select($el[0]).append("svg")
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height)
+                .attr("class", "iapp-entry-map-svg");
 
             d3.json(this.dataUrl, function(error, data) {
                 var states = svg.append("g")
@@ -54,10 +58,9 @@ define(
                     .append("path")
                     .attr("d", path)
                     .attr("fill", function(d, i) {
-                        var fill = "#F3F3F3";
+                        var fill = lightGreyColor;
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        console.log(stateData);
                         if (stateData.diff > 0) {
                             fill = chartColors[0];
                         } 
@@ -67,9 +70,60 @@ define(
 
                         return fill;
                     })
-                    .attr("stroke-width", "2px")
+                    .attr("stroke-width", function(d) {
+                        if (d.id == "15" || d.id == "02") {
+                            return "0px";
+                        } else {
+                            return "2px";
+                        }
+                    })
                     .attr("stroke", "white");
+
+                var key = svg.append("g")
+                    .attr("class", "map-key")
+                    .attr("transform", "translate(" + 1 + ", " + (height - 20) + ")");
+
+                var keyGroup1 = key.append("g")
+                    .attr("transform", "translate(0, 0)");
+                
+                keyGroup1.append("rect")
+                    .attr("fill", lightGreyColor)
+                    .attr("width", keySize)
+                    .attr("height", keySize);
+
+                keyGroup1.append("text")
+                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
+                    .attr("dy", keySize)
+                    .text("no increase");
+
+                var keyGroup2 = key.append("g")
+                    .attr("transform", "translate(170, 0)");
+                
+                keyGroup2.append("rect")
+                    .attr("fill", chartColors[0])
+                    .attr("width", keySize)
+                    .attr("height", keySize);
+
+                keyGroup2.append("text")
+                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
+                    .attr("dy", keySize)
+                    .text("0% - 1% increase");
+
+                var keyGroup3 = key.append("g")
+                    .attr("transform", "translate(340, 0)");
+                
+                keyGroup3.append("rect")
+                    .attr("fill", chartColors[1])
+                    .attr("width", keySize)
+                    .attr("height", keySize);
+
+                keyGroup3.append("text")
+                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
+                    .attr("dy", keySize)
+                    .text("1%+ increase");
             });
+
+
         }
     });
 
