@@ -40,7 +40,7 @@ define([
             this._expanded = true;
         },
         unExpand: function() {
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 800, easing: "swing"});
+            this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 200, easing: "swing"});
             this._expanded = false;
         },
         _expanded: false

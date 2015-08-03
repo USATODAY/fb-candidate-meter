@@ -42,6 +42,8 @@ define(
             var path = d3.geo.path()
                 .projection(projection);
 
+
+
             var svg = this.svg = d3.select($el[0]).append("svg")
                 .attr("width", width)
                 .attr("height", height)
@@ -77,7 +79,24 @@ define(
                             return "2px";
                         }
                     })
-                    .attr("stroke", "white");
+                    .attr("stroke", "white")
+                    .on("mouseover", function(d) {
+                        var stateName = helpers.slugify(d.properties.name);
+                        var stateData = _.findWhere(statesData, {"state": stateName});
+                        var interactionsPretty = Math.round(stateData.diff * 10)/10;
+                        if (interactionsPretty >= 0) {
+                            interactionsPretty = "+" + interactionsPretty;
+                        } 
+                        d3.select("#iapp-map-tooltip")
+                            .style("left", (d3.event.pageX - 100) + "px")
+                            .style("top", (d3.event.pageY - 70) + "px")
+                            .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Total Interactions: " + interactionsPretty + "%</div>")
+                            .classed("iapp-hidden", false);
+                    })
+                    .on("mouseout", function(d) {
+                        d3.select('#iapp-map-tooltip')
+                            .classed("iapp-hidden", true);
+                    });
 
                 var key = svg.append("g")
                     .attr("class", "map-key")
@@ -94,6 +113,8 @@ define(
                 keyGroup1.append("text")
                     .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
                     .attr("dy", keySize)
+                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                    .attr("font-size", "12px")
                     .text("no increase");
 
                 var keyGroup2 = key.append("g")
@@ -107,6 +128,8 @@ define(
                 keyGroup2.append("text")
                     .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
                     .attr("dy", keySize)
+                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                    .attr("font-size", "12px")
                     .text("0% - 1% increase");
 
                 var keyGroup3 = key.append("g")
@@ -120,6 +143,8 @@ define(
                 keyGroup3.append("text")
                     .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
                     .attr("dy", keySize)
+                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                    .attr("font-size", "12px")
                     .text("1%+ increase");
             });
 

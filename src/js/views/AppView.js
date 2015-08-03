@@ -14,6 +14,7 @@ define([
         },
         el: '.iapp-js-app',
         render: function() {
+            this.$el.append("<div id='iapp-map-tooltip' class='iapp-hidden iapp-map-tooltip'></div>");
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
             var testPolitician = this.collection.models[0];

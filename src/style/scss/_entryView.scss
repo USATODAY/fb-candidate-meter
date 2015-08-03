@@ -96,13 +96,44 @@
 .iapp-demo-headers-female {color: $medium-grey;}
 .iapp-demo-headers-male {color: $dark-grey;}
 
+/******
+*Map styles
+******/
+
 
 .iapp-entry-map {
     float: left;
+    // position: relative;
     width: 654px;
 }
 
 .iapp-entry-map-svg {
     display: block;
     margin: 0 auto;
+}
+
+.iapp-map-tooltip {
+    background-color: rgba(74, 74, 74, 0.9);
+    border-radius: 5px;
+    color: white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    z-index: 500;
+}
+
+.iapp-tooltip-state {
+    border-bottom: solid 1px white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1em;
+    margin: 0;
+}
+
+.iapp-tooltip-interactions {
+    marign: 0;
+}
+
+.iapp-hidden {
+    display: none;
 }
