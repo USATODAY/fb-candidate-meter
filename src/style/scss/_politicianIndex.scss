@@ -9,6 +9,7 @@
 
 .iapp-politician-index {
     background-color: white;
+    @include BoxShadowHelper(2);
     position: absolute;
     top: 0;
     width: 100%;

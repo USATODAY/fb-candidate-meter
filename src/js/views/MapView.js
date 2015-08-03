@@ -4,12 +4,13 @@ define(
     'underscore',
     'backbone',
     'd3',
+    'mapCache',
     'templates',
     'config',
     'dataManager',
     'helpers'
     ],
-    function(jQuery, _, Backbone, d3, templates, config, DataManager, helpers){
+    function(jQuery, _, Backbone, d3, mapCache, templates, config, DataManager, helpers){
     
     return Backbone.View.extend({
         initialize: function() {
@@ -50,7 +51,7 @@ define(
                 .attr("height", height)
                 .attr("class", "iapp-entry-map-svg");
 
-            d3.json(this.dataUrl, function(error, data) {
+            mapCache.getMapData(this.dataUrl, function(error, data) {
                 var states = svg.append("g")
                     .attr("class", "states");
 
