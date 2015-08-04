@@ -14,13 +14,15 @@ define(
     return {
         init: function() {
             var overviewData = new DataManager(config.dataDir + "data.json");
+            jQuery(window).on("resize", function() {
+                Backbone.trigger("window:resize");
+            });
             overviewData.getData(function(data) {
                 var sortedPoliticians = _.sortBy(data.politicians, function(politician) {
                     return - politician.latest_interactions;
                 });
                 var politicianCollection = new PoliticianCollection(sortedPoliticians);
                 new AppView({collection: politicianCollection});
-
                 console.log(config.getModuleType());
             });
         }

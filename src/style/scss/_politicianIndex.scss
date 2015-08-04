@@ -2,8 +2,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 150px;
+    max-height: 100px;
     overflow: hidden;
+    @media(min-width: 950px) {
+        max-height: 208px;
+    }
 }
 
 
@@ -11,7 +14,7 @@
     background-color: white;
     @include BoxShadowHelper(2);
     position: absolute;
-    top: 0;
+    top: 110px;
     width: 100%;
     z-index: 5;
 }
@@ -23,10 +26,14 @@
     font-family: "Futura Today Light", Arial, sans-serif;
     opacity: 0.8;
     padding: 10px 0;
+    position: relative;
     text-align: center;
     transition: opacity 500ms ease;
     width: 100%;
+    z-index: 500;
     &:hover {
         opacity: 1;
     }
 }
+
+

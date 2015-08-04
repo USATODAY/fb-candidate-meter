@@ -10,6 +10,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "menu:close", this.unExpand);
+            this.listenTo(Backbone, "window:resize", this.resize);
         },
         template: templates["politicianIndex.html"],
         className: "iapp-politician-index",
@@ -35,15 +36,40 @@ define([
         },
         expand: function() {
             //animate to show all
-            var newHeight = 500;
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": newHeight}, {duration: 800, easing: "swing"});
+            var height = this._getHeight();
+            this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
             this._expanded = true;
         },
         unExpand: function() {
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": 150}, {duration: 200, easing: "swing"});
+            var height = this._getHeight();
+            this.$('.iapp-politician-index-wrap').velocity({"max-height": height.closedHeight}, {duration: 400, easing: "swing"});
             this._expanded = false;
         },
-        _expanded: false
+        resize: function() {
+            var height = this._getHeight();
+            if (this._expanded) {
+                height = height.openHeight;
+            } else {
+                height = height.closedHeight;
+            }
+            this.$(".iapp-politician-index-wrap").css({"max-height": height});
+        },
+        _expanded: false,
+        _getHeight: function() {
+            var closedHeight, openHeight;
+            console.log(config.getModuleType());
+            if (config.getModuleType() == "module-small-size-small") {
+                closedHeight = 100;
+                openHeight = 500;
+            } else {
+                closedHeight = 208;
+                openHeight = 380;
+            }
+            return {
+                openHeight: openHeight,
+                closedHeight: closedHeight
+            };
+        }
 
     });
 });

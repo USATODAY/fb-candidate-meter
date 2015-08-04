@@ -52,11 +52,21 @@ __p += '\n    </div>\n</div>\n';
 return __p
 };
 
+this["templates"]["header.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <h3 class="iapp-index-intro-header">2016 USA TODAY/Facebook Candidate Navigator</h3>\n        <p class="iapp-index-intro-chatter">Mapping the conversation about candidates across the nation.</p>\n    </div>\n</div>\n';
+
+}
+return __p
+};
+
 this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-show-button">See all candidates</div>\n';
+__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-show-button">Select a candidate</div>\n\n';
 
 }
 return __p

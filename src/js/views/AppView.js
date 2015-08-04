@@ -15,11 +15,13 @@ define([
         el: '.iapp-js-app',
         render: function() {
             this.$el.append("<div id='iapp-map-tooltip' class='iapp-hidden iapp-map-tooltip'></div>");
+            this.$el.append(this.headerTemplate());
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
             var testPolitician = this.collection.models[0];
             this.setPolitician(testPolitician);
         },
+        headerTemplate: templates["header.html"],
         setPolitician: function(politicianModel) {
             /******
              * @TODO add ability to update entries view without wiping out/re-rendering

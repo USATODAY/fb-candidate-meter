@@ -29,7 +29,7 @@ define(
             var $el = this.$el;
 
             var width = 580,
-                height = 480,
+                height = 400,
                 padding = 50;
 
             var chartColors = config.chartColors[this.model.get("party")];
@@ -38,8 +38,8 @@ define(
             var lightGreyColor = "#F3F3F3";
 
             var projection = d3.geo.albersUsa()
-                .scale(800)
-                .translate([width / 2, height / 2]);
+                .scale(750)
+                .translate([width / 2, (height / 2) - 30]);
 
             var path = d3.geo.path()
                 .projection(projection);

@@ -1,8 +1,12 @@
 .iapp-entries-wrap {
-    height: 787px;
+    height: 707px;
     position: absolute;
-    top: 190px;
+    top: 250px;
     width: 100%;
+    @media (min-width: 950px) {
+        height: 573px;
+        top: 357px;
+    }
 }
 
 .iapp-entry-details {
@@ -15,6 +19,7 @@
 
     @media (max-width: 950px) {
         height: 300px;
+        padding: 15px 30px;
         width: 100%;
     }
 }
@@ -71,7 +76,7 @@
 
 
 .iapp-entry-wrapper {
-    height: 100%;
+    height: calc(100%);
 }
 
 .iapp-entry-details-demographics {
@@ -109,6 +114,10 @@
     float: left;
     // position: relative;
     width: 654px;
+    @media (max-width: 950px) {
+        float: none;
+        margin: 0 auto;
+    }
 }
 
 .iapp-entry-map-svg {

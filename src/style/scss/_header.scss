@@ -1,0 +1,38 @@
+/******
+* Intro styles
+******/
+
+.iapp-politician-index-intro {
+    background-color: $extra-light-grey;
+    @include BoxShadowHelper(1);
+    color: $dark-grey;
+    height: 110px;
+    left: 0;
+    padding-top: 10px;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    width: 100%;
+    z-index: 499;
+}
+
+
+.iapp-politician-index-intro-inner-wrap {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.iapp-index-intro-chatter {
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    font-size: 0.9em;
+}
+
+.iapp-index-intro-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    margin: 0;
+}
+
+.iapp-index-intro-sub-header {
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    margin: 0;
+}
