@@ -26,17 +26,27 @@ define(
         },
         drawMap: function() {
             var _this = this;
-            var statesData = this.model.get("states");
+            var statesData;
+            if (this.model.get("slug") !== "all-candidates") {
+                statesData = this.model.get("states");
+            } else {
+                statesData = null;
+            }
             var $el = this.$el;
 
             var width = 580,
                 height = 400,
                 padding = 50;
-
-            var chartColors = config.chartColors[this.model.get("party")];
+            
+            var chartColors;
+            var lightGreyColor = "#DEDEDE";
+            if (this.model.get("party")) {
+                chartColors = config.chartColors[this.model.get("party")];
+            } else {
+                chartColors = [lightGreyColor, lightGreyColor];
+            }
             var keySize = 16;
 
-            var lightGreyColor = "#F3F3F3";
 
             var projection = d3.geo.albersUsa()
                 .scale(750)
@@ -79,6 +89,9 @@ define(
                     .attr("d", path)
                     .attr("fill", function(d, i) {
                         var fill = lightGreyColor;
+                        if (statesData === null) {
+                            return fill;
+                        }
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
                         var diff = _this._roundNumber(stateData.diff);
@@ -95,7 +108,7 @@ define(
                         if (d.id == "15" || d.id == "02") {
                             return "0px";
                         } else {
-                            return "2px";
+                            return "1px";
                         }
                     })
                     .attr("stroke", "white")

@@ -18,7 +18,7 @@ define([
             this.$el.append(this.headerTemplate());
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
-            var testPolitician = this.collection.models[0];
+            var testPolitician = this.collection.findWhere({id: 0});
             this.setPolitician(testPolitician);
         },
         headerTemplate: templates["header.html"],
