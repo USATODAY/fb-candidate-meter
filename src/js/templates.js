@@ -66,7 +66,7 @@ this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-show-button">Select a candidate</div>\n\n';
+__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-show-button">See all candidates</div>\n\n';
 
 }
 return __p

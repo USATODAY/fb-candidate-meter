@@ -61,7 +61,7 @@ define([
                 .enter()
                 .append("rect")
                 .attr("width", x)
-                .attr("height", dimensions.height)
+                .attr("height", dimensions.barHeight)
                 .attr("transform", function(d, i) {
                     var translateX = dimensions.leftPadding;
                     if (i > 0) {
