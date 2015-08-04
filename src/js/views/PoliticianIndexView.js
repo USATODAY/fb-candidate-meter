@@ -11,6 +11,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "menu:close", this.unExpand);
+            this.listenTo(Backbone, "politician:set", this.politicianSet);
             this.listenTo(Backbone, "window:resize", this.resize);
         },
         template: templates["politicianIndex.html"],
@@ -120,6 +121,10 @@ define([
             this.$(".iapp-sort-button-interactions").addClass("selected");
             this.$isotopeEl.isotope({sortBy: "trend", sortAscending: false});
             this.$isotopeEl.isotope({sortBy: "interactions", sortAscending: false});
+        },
+        politicianSet: function() {
+            this.$el.addClass("item-selected");
+            this.$(".iapp-politician-index-item").removeClass("selected");
         }
 
     });

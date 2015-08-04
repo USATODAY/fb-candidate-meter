@@ -32,8 +32,12 @@ define([
             "click": "onClick"
         },
         onClick: function() {
+            var _this = this;
             Backbone.trigger("politician:set", this.model);
             Backbone.trigger("menu:close", this.model);
+            _.defer(function() {
+                _this.$el.addClass("selected");
+            });
         }
     });
 });

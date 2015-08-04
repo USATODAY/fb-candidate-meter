@@ -8,6 +8,13 @@ $itemSize: 60px;
     width: 100px;
 }
 
+.item-selected .iapp-politician-index-item {
+    opacity: 0.5;
+    &.selected {
+        opacity: 1;
+    }
+}
+
 .iapp-politician-item-portrait {
     border-radius: 50%;
     height: $itemSize;
