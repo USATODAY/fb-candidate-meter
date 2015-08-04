@@ -21,7 +21,10 @@
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 0.9em;
     margin: 0;
-    max-width: 40em;
+    max-width: 50em;
+    @media(max-width: 950px) {
+        font-size: 0.8em;
+    }
 }
 
 .iapp-index-intro-header {

@@ -114,7 +114,7 @@ define(
                         d3.select("#iapp-map-tooltip")
                             .style("left", (d3.event.pageX - 100) + "px")
                             .style("top", (d3.event.pageY - 60) + "px")
-                            .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Total Interactions: " + interactionsPretty + "%</div>")
+                            .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Users interacting: " + interactionsPretty + "%</div>")
                             .classed("iapp-hidden", false);
                     })
                     .on("mouseout", function(d) {
@@ -139,7 +139,7 @@ define(
                     .attr("dy", keySize)
                     .attr("font-family", "Futura Today Light, Arial, sans-serif")
                     .attr("font-size", "12px")
-                    .text("1+% decrease");
+                    .text("1%+ decrease");
 
                 var keyGroup2 = key.append("g")
                     .attr("transform", "translate(100, 0)");
@@ -199,7 +199,7 @@ define(
                     .attr("dy", keySize)
                     .attr("font-family", "Futura Today Light, Arial, sans-serif")
                     .attr("font-size", "12px")
-                    .text("1+% increase");
+                    .text("1%+ increase");
             });
 
 
