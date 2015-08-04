@@ -102,7 +102,7 @@ define([
             this.$(".selected").removeClass("selected");
             this.$(".iapp-sort-button-name").addClass("selected");
             console.log("name");
-            this.$isotopeEl.isotope({sortBy: "name", sortAscending: false});
+            this.$isotopeEl.isotope({sortBy: "name", sortAscending: true});
         },
         sortByParty: function() {
             this.$(".selected").removeClass("selected");
