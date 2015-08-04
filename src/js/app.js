@@ -19,7 +19,7 @@ define(
             });
             overviewData.getData(function(data) {
                 var sortedPoliticians = _.sortBy(data.politicians, function(politician) {
-                    return - politician.latest_interactions;
+                    return politician.name.split(" ")[1];
                 });
                 var politicianCollection = new PoliticianCollection(sortedPoliticians);
                 new AppView({collection: politicianCollection});

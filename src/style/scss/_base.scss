@@ -18,6 +18,11 @@ body, html, article {
   width: 100%;
 }
 
+html {
+    height: 977px;
+    overflow: hidden;
+}
+
 article {
   font-family: "Futura Today Bold", Arial,sans-serif;
   font-size: 100%;
@@ -37,6 +42,11 @@ article {
 
 .iapp-clickable {
   cursor: pointer;
+}
+
+.iapp-page-wrap {
+    height: 977px;
+    overflow: hidden;
 }
 
 

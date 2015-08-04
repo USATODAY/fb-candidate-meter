@@ -56,7 +56,7 @@ this["templates"]["header.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <h3 class="iapp-index-intro-header">2016 USA TODAY/Facebook Candidate Navigator</h3>\n        <p class="iapp-index-intro-chatter">Mapping the conversation about candidates across the nation.</p>\n    </div>\n</div>\n';
+__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <p class="iapp-index-intro-chatter">USA Today and Facebook have partnered to map conversation about the presidential candidates as it moves across the nation. The interactive below displays total Facebook activity (likes, shares, mentions) for each candidate each week, showing who is trending up and who is trending down. You can see the total activity and a breakdown of who is participating in the conversation about each contender. Click the map to see where each candidate has the strongest and weakest presence in the Facebook conversation.</p>\n    </div>\n</div>\n';
 
 }
 return __p

@@ -8,7 +8,7 @@
     color: $dark-grey;
     height: 110px;
     left: 0;
-    padding-top: 10px;
+    padding: 10px 20px;
     position: absolute;
     text-align: left;
     top: 0;
@@ -17,18 +17,16 @@
 }
 
 
-.iapp-politician-index-intro-inner-wrap {
-    margin: 0 auto;
-    width: 90%;
-}
-
 .iapp-index-intro-chatter {
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 0.9em;
+    margin: 0;
+    max-width: 40em;
 }
 
 .iapp-index-intro-header {
     font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-size: 1.2em;
     margin: 0;
 }
 
