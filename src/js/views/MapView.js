@@ -22,7 +22,7 @@ define(
         className: "iapp-entry-map",
         dataUrl: null,
         render: function() {
-            this.$el.append("<h2 class='iapp-map-header'>View Trending States</h2>");
+            this.$el.append("<h2 class='iapp-map-header'>States with highest and lowest engagement</h2>");
             this.drawMap();
         },
         drawMap: function() {
@@ -182,7 +182,7 @@ define(
                         .attr("dy", keySize)
                         .attr("font-family", "Futura Today Light, Arial, sans-serif")
                         .attr("font-size", "12px")
-                        .text("BOTTOM FIVE");
+                        .text("LOWEST");
 
                     var keyGroup2 = key.append("g")
                         .attr("transform", "translate(100, 0)");
@@ -198,7 +198,7 @@ define(
                         .attr("dy", keySize)
                         .attr("font-family", "Futura Today Light, Arial, sans-serif")
                         .attr("font-size", "12px")
-                        .text("TOP FIVE");
+                        .text("HIGHEST");
                 }
 
             });
