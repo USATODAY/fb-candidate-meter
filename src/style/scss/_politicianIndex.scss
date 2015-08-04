@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     max-height: 100px;
     overflow: hidden;
+    padding: 10px 0;
     @media(min-width: 950px) {
         max-height: 208px;
     }
@@ -24,7 +25,7 @@
     color: white;
     cursor: pointer;
     font-family: "Futura Today Light", Arial, sans-serif;
-    opacity: 0.8;
+    // opacity: 0.8;
     padding: 10px 0;
     position: relative;
     text-align: center;
@@ -33,6 +34,30 @@
     z-index: 500;
     &:hover {
         opacity: 1;
+    }
+}
+
+.iapp-politician-index-sort-buttons {
+    display: none;
+}
+
+.expanded .iapp-politician-index-sort-buttons {
+    display: block;
+    margin: 0 20px;
+}
+
+.iapp-politician-index-sort-label {
+    font-family: "Futura Today Light", Arial, sans-serif;
+}
+
+.iapp-politician-index-sort-button {
+    cursor: pointer;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    padding: 5px;
+
+    &.selected {
+        background: $blue2;
+        color: white;
     }
 }
 

@@ -22,6 +22,8 @@ module.exports = function(grunt) {
     "api/analytics": "lib/analytics",
     "d3": '../../bower_components/d3/d3',
     "angular": '../../bower_components/angular/angular',
+    "isotope": "../../bower_components/isotope/dist/isotope.pkgd",
+    "imagesloaded": "../../bower_components/imagesloaded/imagesloaded.pkgd",
     "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
     "velocity": '../../bower_components/velocity/velocity',
     'moment': '../../bower_components/moment/moment',
