@@ -112,23 +112,55 @@ define(
                             return "1px";
                         }
                     })
-                    .attr("stroke", "white")
-                    .on("mouseover", function(d) {
-                        var stateName = helpers.slugify(d.properties.name);
+                    .attr("stroke", "white");
+
+                var dc = states.append("g")
+                    .attr("transform", "translate(" + (width - 20) + "," + (height/2 - 10) + ")");
+
+                dc.append("rect")
+                    .attr("width", 20)
+                    .attr("height", 20)
+                    .attr("fill", function(d, i) {
+                        var fill = lightGreyColor;
+                        if (statesData === null) {
+                            return fill;
+                        }
+                        var stateName = "district_of_columbia";
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        var interactionsPretty = _this._roundNumber(stateData.percent);
-                        d3.select("#iapp-map-tooltip")
-                            .style("left", (d3.event.pageX - 100) + "px")
-                            .style("top", (d3.event.pageY - 60) + "px")
-                            .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Users interacting: " + interactionsPretty + "%</div>")
-                            .classed("iapp-hidden", false);
-                    })
-                    .on("mouseout", function(d) {
-                        d3.select('#iapp-map-tooltip')
-                            .classed("iapp-hidden", true);
+                        var diff = _this._roundNumber(stateData.diff);
+                        if (stateData.top) {
+                            fill = chartColors[1];
+                        } 
+                        else if (stateData.bottom){
+                            fill = chartColors[0];
+                        }
+
+                        return fill;
                     });
 
-                console.log(_this.model);
+                dc.append("text")
+                    .attr("transform", "translate(0, 10)")
+                    .attr("dy", "2em")
+                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                    .attr("font-size", "12px")
+                    .text("D.C.");
+
+                    // .on("mouseover", function(d) {
+                    //     var stateName = helpers.slugify(d.properties.name);
+                    //     var stateData = _.findWhere(statesData, {"state": stateName});
+                    //     var interactionsPretty = _this._roundNumber(stateData.percent);
+                    //     d3.select("#iapp-map-tooltip")
+                    //         .style("left", (d3.event.pageX - 100) + "px")
+                    //         .style("top", (d3.event.pageY - 60) + "px")
+                    //         .html("<h3 class='iapp-tooltip-state'>" + d.properties.name + "</h3><div class='iapp-tooltip-interactions'>Users interacting: " + interactionsPretty + "%</div>")
+                    //         .classed("iapp-hidden", false);
+                    // })
+                    // .on("mouseout", function(d) {
+                    //     d3.select('#iapp-map-tooltip')
+                    //         .classed("iapp-hidden", true);
+                    // });
+                
+
 
                 if (_this.model.get("slug") != "all-candidates") {
 

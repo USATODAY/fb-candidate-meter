@@ -11,8 +11,8 @@
         padding: 15px 30px;
         width: 100%;
     }
-    &.republican { background: transparentize($red1, 0.7)}
-    &.democrat { background: transparentize($blue1, 0.7)}
+    &.republican { background: $red1}
+    &.democrat { background: lighten($blue1, 10)}
 }
 
 .iapp-entry-details-header {
@@ -39,7 +39,7 @@
 }
 
 .iapp-entry-details-demographics-overall {
-    background-color: transparentize($medium-grey, 0.5);
+    background-color: $light-grey;
     padding-top: 10px;
 }
 
@@ -72,10 +72,12 @@
 
 .iapp-entry-details-demographics {
     border: solid 1px $light-grey;
+    margin-top: 20px;
     width: 245px;
 
     @media (max-width: 950px) {
         float: right;
+        margin-top: 0;
     }
 }
 

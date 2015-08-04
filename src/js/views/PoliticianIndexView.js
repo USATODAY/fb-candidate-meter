@@ -44,8 +44,10 @@ define([
             return this;
         },
         renderSubView: function(model) {
-            var politicianItemView = new PoliticianItemView({model: model});
-            this.$('.iapp-politician-index-wrap').append(politicianItemView.render().el);
+            if (model.get("slug") != "all-candidates") {
+                var politicianItemView = new PoliticianItemView({model: model});
+                this.$('.iapp-politician-index-wrap').append(politicianItemView.render().el);
+            }
             
         },
         events: {
