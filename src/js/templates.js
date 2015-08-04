@@ -56,7 +56,7 @@ this["templates"]["header.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <p class="iapp-index-intro-chatter">USA Today and Facebook have partnered to map conversation about the presidential candidates as it moves across the nation. The interactive below displays total Facebook activity (likes, shares, mentions) for each candidate each week, showing who is trending up and who is trending down. You can see the total activity and a breakdown of who is participating in the conversation about each contender. Click the map to see where each candidate has the strongest and weakest presence in the Facebook conversation.</p>\n    </div>\n</div>\n';
+__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <h2 class="iapp-index-intro-header">2016 CANDIDATES FACEBOOK ACTIVITY</h2>\n        <p class="iapp-index-intro-chatter">USA Today and Facebook have partnered to map conversation about the presidential candidates. The interactive below displays total Facebook activity (likes, shares, mentions) for each candidate each week, showing who is trending up and down. </p>\n    </div>\n</div>\n';
 
 }
 return __p
@@ -66,7 +66,7 @@ this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-sort-buttons">\n    <span class="iapp-politician-index-sort-label">Sort by: </span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-name selected">Name</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-trend">Trending</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-party">Party</span>\n</div>\n<div class="iapp-politician-index-show-button">See all candidates</div>\n\n';
+__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-sort-buttons">\n    <span class="iapp-politician-index-sort-label">Sort by: </span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-name selected">Name</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-trend">Trending</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-party">Party</span>\n</div>\n<div class="iapp-politician-index-show-button">Select a candidate</div>\n\n';
 
 }
 return __p
@@ -83,6 +83,12 @@ __p += '<div class="iapp-politician-item-portrait ' +
  if(party){ ;
 __p += '\n            <img src="';
  print(config.imageDir + "/candidates/" + slug + ".jpg") ;
+__p += '" alt="' +
+((__t = ( name )) == null ? '' : __t) +
+'">\n        ';
+ } else {;
+__p += '\n            <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".png") ;
 __p += '" alt="' +
 ((__t = ( name )) == null ? '' : __t) +
 '">\n        ';

@@ -22,6 +22,7 @@ define(
         className: "iapp-entry-map",
         dataUrl: null,
         render: function() {
+            this.$el.append("<h2 class='iapp-map-header'>View Trending States</h2>");
             this.drawMap();
         },
         drawMap: function() {
@@ -166,7 +167,7 @@ define(
 
         },
         _roundNumber: function(num) {
-            return Math.round(num * 10) / 10;
+            return Math.round(num * 100) / 100;
         }
     });
 

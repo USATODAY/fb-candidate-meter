@@ -2,12 +2,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 100px;
+    max-height: 25px;
     overflow: hidden;
-    padding: 10px 0;
-    @media(min-width: 950px) {
-        max-height: 208px;
-    }
+    padding: 25px 0 0 0;
 }
 
 
@@ -15,13 +12,16 @@
     background-color: white;
     @include BoxShadowHelper(2);
     position: absolute;
-    top: 110px;
+    top: 170px;
     width: 100%;
     z-index: 5;
+    @media(max-width: 950px) {
+        top: 120px;
+    }
 }
 
 .iapp-politician-index-show-button {
-    background-color: $blue;
+    background-color: $medium-grey;
     color: white;
     cursor: pointer;
     font-family: "Futura Today Light", Arial, sans-serif;

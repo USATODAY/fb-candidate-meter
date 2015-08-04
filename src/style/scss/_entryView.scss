@@ -1,14 +1,3 @@
-.iapp-entries-wrap {
-    height: 707px;
-    position: absolute;
-    top: 250px;
-    width: 100%;
-    @media (min-width: 950px) {
-        height: 573px;
-        top: 357px;
-    }
-}
-
 .iapp-entry-details {
     background: $extra-light-grey;
     display: table-cell;
@@ -22,6 +11,8 @@
         padding: 15px 30px;
         width: 100%;
     }
+    &.republican { background: transparentize($red1, 0.7)}
+    &.democrat { background: transparentize($blue1, 0.7)}
 }
 
 .iapp-entry-details-header {
@@ -48,7 +39,7 @@
 }
 
 .iapp-entry-details-demographics-overall {
-    background-color: $light-grey;
+    background-color: transparentize($medium-grey, 0.5);
     padding-top: 10px;
 }
 
@@ -113,10 +104,21 @@
 .iapp-entry-map {
     float: left;
     // position: relative;
+    padding-top: 30px;
     width: 654px;
     @media (max-width: 950px) {
         float: none;
         margin: 0 auto;
+        padding-top: 0;
+    }
+}
+
+.iapp-map-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    margin-left: 40px;
+    @media (max-width: 950px) {
+        font-size: 1.2em;
+        margin: 10px 0;
     }
 }
 

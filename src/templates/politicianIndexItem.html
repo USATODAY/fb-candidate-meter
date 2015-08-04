@@ -2,6 +2,8 @@
     <div class="iapp-politician-item-portrait-inner">
         <% if(party){ %>
             <img src="<% print(config.imageDir + "/candidates/" + slug + ".jpg") %>" alt="<%= name %>">
+        <% } else {%>
+            <img src="<% print(config.imageDir + "/candidates/" + slug + ".png") %>" alt="<%= name %>">
         <% } %>
     </div>
 </div>

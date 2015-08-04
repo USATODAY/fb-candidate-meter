@@ -65,12 +65,14 @@ define([
             var height = this._getHeight();
             this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
             this.$el.addClass('expanded');
+            this.$('.iapp-politician-index-show-button').text("Select a candidate");
             this._expanded = true;
         },
         unExpand: function() {
             var height = this._getHeight();
             this.$('.iapp-politician-index-wrap').velocity({"max-height": height.closedHeight}, {duration: 400, easing: "swing"});
             this.$el.removeClass('expanded');
+            this.$('.iapp-politician-index-show-button').text("See all candidates");
             this._expanded = false;
         },
         resize: function() {
@@ -82,15 +84,14 @@ define([
             }
             this.$(".iapp-politician-index-wrap").css({"max-height": height});
         },
-        _expanded: false,
+        _expanded: true,
         _getHeight: function() {
             var closedHeight, openHeight;
-            console.log(config.getModuleType());
             if (config.getModuleType() == "module-small-size-small") {
-                closedHeight = 100;
+                closedHeight = 50;
                 openHeight = 500;
             } else {
-                closedHeight = 208;
+                closedHeight = 50;
                 openHeight = 380;
             }
             return {

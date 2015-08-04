@@ -3,10 +3,10 @@
 ******/
 
 .iapp-politician-index-intro {
-    background-color: $extra-light-grey;
+    background-color: $dark-grey;
     @include BoxShadowHelper(1);
-    color: $dark-grey;
-    height: 110px;
+    color: white;
+    height: 170px;
     left: 0;
     padding: 10px 20px;
     position: absolute;
@@ -14,23 +14,32 @@
     top: 0;
     width: 100%;
     z-index: 499;
+    @media (max-width: 950px) {
+        height: 120px;
+    }
 }
 
 
 .iapp-index-intro-chatter {
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 0.9em;
+    line-height: 1.4;
     margin: 0;
-    max-width: 50em;
     @media(max-width: 950px) {
         font-size: 0.8em;
     }
 }
 
 .iapp-index-intro-header {
-    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    // border-bottom: solid 1px white;
+    font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 1.2em;
-    margin: 0;
+    margin: 1em 0 1em 0;
+    padding-bottom: 0.5em;
+    @media(max-width: 950px) {
+        padding-bottom: 0;
+        margin: 0.5em 0;
+    }
 }
 
 .iapp-index-intro-sub-header {
