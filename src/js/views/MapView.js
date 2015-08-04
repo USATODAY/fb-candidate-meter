@@ -82,16 +82,11 @@ define(
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
                         var diff = _this._roundNumber(stateData.diff);
-                        if (diff > 0 && diff < 1) {
-                            fill = chartColors[0];
-                        } 
-                        else if (diff >= 1){
+                        if (stateData.top) {
                             fill = chartColors[1];
-                        } else if (diff < 0 && diff > -1) {
-                            fill = t.url();
-                        } else if (diff <= -1) {
-                            console.log(d);
-                            fill = t2.url();
+                        } 
+                        else if (stateData.bottom){
+                            fill = chartColors[0];
                         }
 
                         return fill;
@@ -107,10 +102,7 @@ define(
                     .on("mouseover", function(d) {
                         var stateName = helpers.slugify(d.properties.name);
                         var stateData = _.findWhere(statesData, {"state": stateName});
-                        var interactionsPretty = _this._roundNumber(stateData.diff);
-                        if (interactionsPretty >= 0) {
-                            interactionsPretty = "+" + interactionsPretty;
-                        } 
+                        var interactionsPretty = _this._roundNumber(stateData.percent);
                         d3.select("#iapp-map-tooltip")
                             .style("left", (d3.event.pageX - 100) + "px")
                             .style("top", (d3.event.pageY - 60) + "px")
@@ -130,7 +122,7 @@ define(
                     .attr("transform", "translate(0, 0)");
                 
                 keyGroup1.append("rect")
-                    .attr("fill", t2.url())
+                    .attr("fill", chartColors[0])
                     .attr("width", keySize)
                     .attr("height", keySize);
 
@@ -139,13 +131,13 @@ define(
                     .attr("dy", keySize)
                     .attr("font-family", "Futura Today Light, Arial, sans-serif")
                     .attr("font-size", "12px")
-                    .text("1%+ decrease");
+                    .text("Bottom five");
 
                 var keyGroup2 = key.append("g")
                     .attr("transform", "translate(100, 0)");
                 
                 keyGroup2.append("rect")
-                    .attr("fill", t.url())
+                    .attr("fill", chartColors[1])
                     .attr("width", keySize)
                     .attr("height", keySize);
 
@@ -154,52 +146,8 @@ define(
                     .attr("dy", keySize)
                     .attr("font-family", "Futura Today Light, Arial, sans-serif")
                     .attr("font-size", "12px")
-                    .text("0% - 1% decrease");
+                    .text("Top five");
 
-                var keyGroup3 = key.append("g")
-                    .attr("transform", "translate(215, 0)");
-                
-                keyGroup3.append("rect")
-                    .attr("fill", lightGreyColor)
-                    .attr("width", keySize)
-                    .attr("height", keySize);
-
-                keyGroup3.append("text")
-                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
-                    .attr("dy", keySize)
-                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                    .attr("font-size", "12px")
-                    .text("no change");
-
-                var keyGroup4 = key.append("g")
-                    .attr("transform", "translate(300, 0)");
-                
-                keyGroup4.append("rect")
-                    .attr("fill", chartColors[0])
-                    .attr("width", keySize)
-                    .attr("height", keySize);
-
-                keyGroup4.append("text")
-                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
-                    .attr("dy", keySize)
-                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                    .attr("font-size", "12px")
-                    .text("0% - 1% decrease");
-
-                var keyGroup5 = key.append("g")
-                    .attr("transform", "translate(415, 0)");
-                
-                keyGroup5.append("rect")
-                    .attr("fill", chartColors[1])
-                    .attr("width", keySize)
-                    .attr("height", keySize);
-
-                keyGroup5.append("text")
-                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
-                    .attr("dy", keySize)
-                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                    .attr("font-size", "12px")
-                    .text("1%+ increase");
             });
 
 

@@ -41,7 +41,10 @@ define([
 
         },
         initialize: function(attrs, options) {
-            var dateObj = this._getDate(attrs.date);
+            var datObj;
+            if (attrs !== null) {
+                dateObj = this._getDate(attrs.date);
+            }
             this.set({
                 'dateObj': dateObj,
                 'name': options.props.name,
