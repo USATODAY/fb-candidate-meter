@@ -40,7 +40,8 @@ define([
             dataManager.getData(function(data) {
                 var props = _.omit(data, 'weekly_entries');
                 _.extend(props, {party: _this.get("party")});
-                var entryCollection = new EntryCollection(data.weekly_entries, {props: props});
+                var cleanEntries = _.without(data.weekly_entries, null);
+                var entryCollection = new EntryCollection(cleanEntries, {props: props});
                 _this.set({entryCollection: entryCollection});
             });
         },
