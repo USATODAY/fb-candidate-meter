@@ -23,11 +23,15 @@ define([
             this.$isotopeEl = this.$(".iapp-politician-index-wrap");
             this.$isotopeEl.isotope({
                 itemSelector: ".iapp-politician-index-item",
-                transitionDuration: 500,
+                transitionDuration: '0.25s',
                 layoutMode: 'fitRows',
                 getSortData: {
                     party: '[data-party]',
-                    trend: '[data-trend]',
+                    trend: function(item) {
+                        var $item = jQuery(item);
+                        var trend = $item.data("trend");
+                        return trend;
+                    },
                     interactions: '[data-interactions]',
                     name: '[data-lastname]'
                 }
