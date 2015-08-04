@@ -128,39 +128,46 @@ define(
                             .classed("iapp-hidden", true);
                     });
 
-                var key = svg.append("g")
-                    .attr("class", "map-key")
-                    .attr("transform", "translate(" + 1 + ", " + (height - 20) + ")");
+                console.log(_this.model);
 
-                var keyGroup1 = key.append("g")
-                    .attr("transform", "translate(0, 0)");
-                
-                keyGroup1.append("rect")
-                    .attr("fill", chartColors[0])
-                    .attr("width", keySize)
-                    .attr("height", keySize);
+                if (_this.model.get("slug") != "all-candidates") {
 
-                keyGroup1.append("text")
-                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
-                    .attr("dy", keySize)
-                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                    .attr("font-size", "12px")
-                    .text("Bottom five");
+                    var key = svg.append("g")
+                        .attr("class", "map-key")
+                        .attr("transform", "translate(" + 1 + ", " + (height - 20) + ")");
 
-                var keyGroup2 = key.append("g")
-                    .attr("transform", "translate(100, 0)");
-                
-                keyGroup2.append("rect")
-                    .attr("fill", chartColors[1])
-                    .attr("width", keySize)
-                    .attr("height", keySize);
+                    var keyGroup1 = key.append("g")
+                        .attr("transform", "translate(0, 0)");
+                    
+                    keyGroup1.append("circle")
+                        .attr("fill", chartColors[0])
+                        .attr("r", keySize/2)
+                        .attr("cx", keySize/2)
+                        .attr("cy", keySize/2);
 
-                keyGroup2.append("text")
-                    .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
-                    .attr("dy", keySize)
-                    .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                    .attr("font-size", "12px")
-                    .text("Top five");
+                    keyGroup1.append("text")
+                        .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
+                        .attr("dy", keySize)
+                        .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                        .attr("font-size", "12px")
+                        .text("BOTTOM FIVE");
+
+                    var keyGroup2 = key.append("g")
+                        .attr("transform", "translate(100, 0)");
+                    
+                    keyGroup2.append("circle")
+                        .attr("fill", chartColors[1])
+                        .attr("r", keySize/2)
+                        .attr("cx", keySize/2)
+                        .attr("cy", keySize/2);
+
+                    keyGroup2.append("text")
+                        .attr("transform", "translate(" + (keySize + 5) + ", 0 )")
+                        .attr("dy", keySize)
+                        .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                        .attr("font-size", "12px")
+                        .text("TOP FIVE");
+                }
 
             });
 
