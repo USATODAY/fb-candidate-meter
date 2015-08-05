@@ -51,7 +51,7 @@ define([
             
         },
         events: {
-            "click .iapp-politician-index-show-button": "toggleExpand",
+            "click .iapp-politician-index-show-button": "expand",
             "click .iapp-sort-button-trend": "sortByTrend",
             "click .iapp-sort-button-name": "sortByName",
             "click .iapp-sort-button-party": "sortByParty"
