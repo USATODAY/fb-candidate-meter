@@ -87,6 +87,11 @@
     @media (max-width: 950px) {
         float: left;
     }
+    @media (min-width: 950px) {
+        &.slide {
+            margin-top: 220px;
+        }
+    }
 }
 
 .iapp-entry-details-demographics svg {

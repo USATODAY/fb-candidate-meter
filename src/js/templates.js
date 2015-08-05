@@ -9,7 +9,13 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<section class="iapp-entry-details ' +
 ((__t = ( party )) == null ? '' : __t) +
-'">\n    <div class="iapp-detail-summary">\n        <h2 class="iapp-entry-details-header">' +
+'">\n    ';
+ if (slug=="all-candidates") { ;
+__p += '\n        <div class="iapp-detail-summary slide">\n    ';
+ } else {;
+__p += '\n        <div class="iapp-detail-summary">\n    ';
+ } ;
+__p += '\n        <h2 class="iapp-entry-details-header">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>\n        <h3 class="iapp-entry-details-large-number">';
  print(interactions.toLocaleString()) ;

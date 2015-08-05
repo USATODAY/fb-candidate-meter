@@ -163,6 +163,6 @@ define([
                     percent = Math.round( percent * 10) / 10;
                     return percent + "%";
                 });
-        }
+        },
     });
 });

@@ -1,5 +1,9 @@
 <section class="iapp-entry-details <%= party %>">
-    <div class="iapp-detail-summary">
+    <% if (slug=="all-candidates") { %>
+        <div class="iapp-detail-summary slide">
+    <% } else {%>
+        <div class="iapp-detail-summary">
+    <% } %>
         <h2 class="iapp-entry-details-header"><%= name %></h2>
         <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>
         <h3 class="iapp-entry-details-large-number"><% print(interactions.toLocaleString()) %> <span class="iapp-entry-details-large-number-unit">interactions</span></h3>
