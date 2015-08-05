@@ -1,0 +1,56 @@
+$itemSize: 60px;
+
+.iapp-politician-index-item {
+    cursor: pointer;
+    margin: 0 9px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+
+.item-selected .iapp-politician-index-item {
+    .iapp-politician-item-portrait {
+        opacity: 0.5;
+    }
+    &.selected {
+        .iapp-politician-item-portrait {
+            opacity: 1;
+        }
+    }
+}
+
+.iapp-politician-item-portrait {
+    border-radius: 50%;
+    height: $itemSize;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: $itemSize;
+    img {
+        max-width: 100%;
+    }
+
+    &.republican {border: solid 3px $red2;}
+    &.democrat {border: solid 3px $blue2;}
+}
+
+.iapp-politician-item-portrait-inner {
+    // border: solid 2px white;
+    // border-radius: 50%;
+    // height: $itemSize;
+    // width: $itemSize;
+}
+
+.iapp-politician-header {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 5px 0 10px 0;
+}
+
+.iapp-politician-item-trend {
+    position: absolute;
+    right: 15px;
+    top: 35px;
+    width: 22px;
+}

@@ -1,0 +1,27 @@
+<section class="iapp-entry-details <%= party %>">
+    <% if (slug=="all-candidates") { %>
+        <div class="iapp-detail-summary slide">
+    <% } else {%>
+        <div class="iapp-detail-summary">
+    <% } %>
+        <h2 class="iapp-entry-details-header"><%= name %></h2>
+        <h4 class="iapp-entry-details-subheader">Overall Facebook Activity</h4>
+        <h3 class="iapp-entry-details-large-number"><% print(interactions.toLocaleString()) %> <span class="iapp-entry-details-large-number-unit">interactions</span></h3>
+        <div class="iapp-entry-details-trend">
+            <% if (total_interactions_diff) { %>
+            <img class="iapp-details-trend-icon" src="<% print(config.imageDir + trend)%>.png" alt="<%= trend %>"></span>
+            <span class="iapp-details-trend-detail"><% trend == "down" ? print("Decreased") : print("Increased")%> by <% print(Math.abs(total_interactions_diff).toLocaleString()) %></span>
+            <% } %>
+        </div>
+    </div>
+    <div class="iapp-entry-details-demographics">
+        <div class="iapp-entry-details-demographics-overall">
+            <div class="iapp-entry-details-demographics-overall-headers">
+                <span class="iapp-demo-headers-female">Female</span>
+                <span class="iapp-demo-headers-male">Male</span>
+            </div>
+            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>
+        </div>
+        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>
+    </div>
+</section>

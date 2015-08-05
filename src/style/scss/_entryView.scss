@@ -1,0 +1,162 @@
+.iapp-entry-details {
+    background: $extra-light-grey;
+    display: table-cell;
+    float: right;
+    padding: 30px;
+    width: 305px;
+    height: 100%;
+
+    @media (max-width: 950px) {
+        height: 300px;
+        padding: 15px 30px;
+        width: 100%;
+    }
+    &.republican { background: $red1}
+    &.democrat { background: lighten($blue1, 10)}
+}
+
+.iapp-entry-details-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+}
+
+.republican .iapp-entry-details-header { color: $red2; }
+.democrat .iapp-entry-details-header { color: $blue2; }
+
+.iapp-entry-details-subheader {
+    border-bottom: solid 1px $dark-grey;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 0;
+}
+
+.iapp-entry-details-large-number {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.iapp-entry-details-large-number-unit {
+    font-size: 0.5em;
+}
+
+.iapp-entry-details-demographics-overall {
+    background-color: $light-grey;
+    padding-top: 10px;
+}
+
+.iapp-entry-details-demographics-overview-bar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.iapp-entry-details-demographics-overall-headers {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1em;
+    text-align: center;
+
+    span {
+        margin: 5px;
+    }
+}
+
+.iapp-entry-details-trend {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+
+.iapp-entry-wrapper {
+    height: calc(100%);
+}
+
+.iapp-entry-details-demographics {
+    border: solid 1px $light-grey;
+    margin-top: 20px;
+    width: 245px;
+
+    @media (max-width: 950px) {
+        float: right;
+        margin-top: 0;
+    }
+}
+
+.iapp-detail-summary {
+    max-width: 300px;
+
+    @media (max-width: 950px) {
+        float: left;
+    }
+    @media (min-width: 950px) {
+        &.slide {
+            margin-top: 200px;
+        }
+    }
+}
+
+.iapp-entry-details-demographics svg {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.iapp-demo-headers-female {color: $medium-grey;}
+.iapp-demo-headers-male {color: $dark-grey;}
+
+/******
+*Map styles
+******/
+
+
+.iapp-entry-map {
+    float: left;
+    // position: relative;
+    padding-top: 30px;
+    width: 654px;
+    @media (max-width: 950px) {
+        float: none;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+}
+
+.iapp-map-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    margin-left: 25px;
+    @media (max-width: 950px) {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+}
+
+.iapp-entry-map-svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.iapp-map-tooltip {
+    background-color: rgba(74, 74, 74, 0.9);
+    border-radius: 5px;
+    color: white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    z-index: 500;
+}
+
+.iapp-tooltip-state {
+    border-bottom: solid 1px white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.iapp-tooltip-interactions {
+    font-size: 0.8em;
+    marign: 0;
+}
+
+.iapp-hidden {
+    display: none;
+}

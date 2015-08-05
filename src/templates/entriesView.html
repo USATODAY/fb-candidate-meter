@@ -1,0 +1,11 @@
+<div class="iapp-entries-date-wrap">
+    <div class="iapp-entries-date-inner-wrap">
+        <% if (showPrevious) {%>
+        <span class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left.png")%>" alt="left"></span>
+        <%}%>
+        <span class="iapp-entries-date">Week of <%= date %></span> 
+        <% if (showNext) {%>
+        <span class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right.png")%>" alt="right"></span>
+        <%}%>
+    </div>
+</div>

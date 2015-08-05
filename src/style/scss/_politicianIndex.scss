@@ -1,0 +1,65 @@
+.iapp-politician-index-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 25px;
+    overflow: hidden;
+    padding: 25px 0 25px 0;
+}
+
+
+.iapp-politician-index {
+    background-color: white;
+    @include BoxShadowHelper(2);
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    z-index: 5;
+    @media(max-width: 950px) {
+        top: 120px;
+    }
+}
+
+.iapp-politician-index-show-button {
+    background-color: $medium-grey;
+    color: white;
+    cursor: pointer;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    // opacity: 0.8;
+    padding: 15px 5px;
+    position: relative;
+    text-align: center;
+    transition: opacity 500ms ease;
+    width: 100%;
+    z-index: 500;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.iapp-politician-index-sort-buttons {
+    display: none;
+}
+
+.expanded .iapp-politician-index-sort-buttons {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.iapp-politician-index-sort-label {
+    font-family: "Futura Today Light", Arial, sans-serif;
+}
+
+.iapp-politician-index-sort-button {
+    cursor: pointer;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    padding: 5px;
+
+    &.selected {
+        background: $medium-grey;
+        color: white;
+    }
+}
+
+

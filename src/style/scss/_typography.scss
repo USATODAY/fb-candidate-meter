@@ -1,7 +1,9 @@
+
 html { font-weight: normal; font-family: "Futura Today Normal", Arial,sans-serif;}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Futura Today Bold", Arial,sans-serif;
+  font-weight: 400;
 }
 
 .chatter {
@@ -30,4 +32,8 @@ h1, h2, h3, h4, h5, h6 {
 
 strong {
   font-family: "Futura Today Bold", Arial,sans-serif;
+}
+
+article {
+    color: $dark-grey;
 }

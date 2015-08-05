@@ -1,0 +1,41 @@
+.iapp-entries-date-wrap {
+    border-bottom: solid 1px $light-grey;
+    padding: 10px 0;
+}
+
+.iapp-loader {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.iapp-entries-wrap {
+    height: 707px;
+    position: absolute;
+    top: 260px;
+    width: 100%;
+
+    @media (max-width: 950px) {
+        top: 210px;
+    }
+}
+
+.iapp-entries-date-inner-wrap {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    width: 270px;
+}
+
+.iapp-entries-date-selector {
+    cursor: pointer;
+}
+
+.iapp-entries-date-previous {
+    float: left;
+}
+
+.iapp-entries-date-next {
+    float: right;
+}

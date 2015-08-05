@@ -1,17 +1,37 @@
 define(
-  [
+    [
     'jquery',
     'underscore',
-    'templates'
-  ],
-  function(jQuery, _, templates){
-    var app = app || {};
+    'backbone',
+    'isotope',
+    'config',
+    'dataManager',
+    'collections/PoliticianCollection',
+    'views/AppView'
+    ],
+    function(jQuery, _, Backbone, Isotope, config, DataManager, PoliticianCollection, AppView){
+    
+    return {
+        init: function() {
+            require(['jquery-bridget/jquery.bridget'],
+                function() {
+                    // make Isotope a jQuery plugin
+                    jQuery.bridget('isotope', Isotope);
 
-    app.init = function() {
-      console.log("app initialized");
-      jQuery("body").append(templates["template.html"]({test: "Hello world!"}));
+                    var overviewData = new DataManager(config.dataDir + "data.json");
+                    jQuery(window).on("resize", function() {
+                        Backbone.trigger("window:resize");
+                    });
+                    overviewData.getData(function(data) {
+                        var sortedPoliticians = _.sortBy(data.politicians, function(politician) {
+                            //sort by last name by default
+                            return politician.name.split(" ")[1];
+                        });
+                        var politicianCollection = new PoliticianCollection(sortedPoliticians);
+                        new AppView({collection: politicianCollection});
+                    });
+                });
+        }
     };
-
-    return app;
 
 });
