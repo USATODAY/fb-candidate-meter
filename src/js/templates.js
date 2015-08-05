@@ -72,6 +72,19 @@ __p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politici
 return __p
 };
 
+this["templates"]["infoView.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<h3 class="iapp-info-header">About the data</h3>\n<p class="iapp-info">State engagement level is measured by the percent of all Facebook users in a given state, who have interacted with a given candidate. Interactions include likes, comments, and mentions.</p>\n<p class="iapp-info"><strong>Credits: </strong> Paul Singer, Shawn Sullivan, Kevin Kepple, Mitchell Thorson, USA TODAY; Ogo Batzorig, Gannett Digital</p>\n<p class="iapp-info"><strong>Source: </strong> Facebook data</p>\n\n<img class="iapp-info-close" src="';
+ print(config.imageDir + "close-icon.png") ;
+__p += '" alt="close">\n';
+
+}
+return __p
+};
+
 this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;

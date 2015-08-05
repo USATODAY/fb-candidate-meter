@@ -1,0 +1,42 @@
+.iapp-info-panel {
+    background: rgba(74, 74, 74, 1);
+    bottom: 0;
+    color: white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    padding: 25px;
+    position: absolute;
+    transform: translate(0, 0);
+    transition: transform 300ms ease;
+    width: 100%;
+    z-index: 550;
+
+    strong {
+        font-family: "Futura Today DemiBold", Arial, sans-serif;
+        font-weight: 400;
+    }
+
+    &.iapp-hide {
+        transform: translate(0, 100%);
+    }
+}
+
+.iapp-info-close {
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+.iapp-info-header {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0.5em auto;
+}
+
+.iapp-info-button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 550;
+}
