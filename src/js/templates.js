@@ -66,7 +66,7 @@ this["templates"]["header.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <h2 class="iapp-index-intro-header">2016 CANDIDATES FACEBOOK ACTIVITY</h2>\n        <hr class="iapp-index-intro-rule" />\n        <p class="iapp-index-intro-chatter">USA Today and Facebook have partnered to map conversation about the presidential candidates. The interactive below displays total Facebook activity (likes, shares, mentions) for each candidate each week, showing who is trending up and down. </p>\n    </div>\n</div>\n';
+__p += '<div class="iapp-politician-index-intro">\n    <div class="iapp-politician-index-intro-inner-wrap">\n        <h2 class="iapp-index-intro-header">2016 USA TODAY/FACEBOOK Candidate Barometer</h2>\n        <hr class="iapp-index-intro-rule" />\n        <p class="iapp-index-intro-chatter">USA Today and Facebook have partnered to map conversation about the presidential candidates. The interactive below displays total Facebook activity (likes, shares, mentions) for each candidate each week, showing who is trending up and down. </p>\n    </div>\n</div>\n';
 
 }
 return __p

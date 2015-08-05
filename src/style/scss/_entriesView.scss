@@ -3,6 +3,13 @@
     padding: 10px 0;
 }
 
+.iapp-loader {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .iapp-entries-wrap {
     height: 707px;
     position: absolute;

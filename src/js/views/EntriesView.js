@@ -21,7 +21,7 @@ define([
             var _this = this;
             if (this.entryCollection === null) {
                 //check if entryCollection is null due or still fetching
-                this.$el.html("loading...");
+                this.$el.html("<img src='" + config.imageDir + "ring-loading.svg' alt='loading' class='iapp-loader'>");
             } else {
                 //render entries
                 this.$el.empty();
