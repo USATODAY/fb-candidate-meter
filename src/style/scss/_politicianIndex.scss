@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     max-height: 25px;
     overflow: hidden;
-    padding: 25px 0 0 0;
+    padding: 25px 0 25px 0;
 }
 
 
@@ -26,7 +26,7 @@
     cursor: pointer;
     font-family: "Futura Today Light", Arial, sans-serif;
     // opacity: 0.8;
-    padding: 10px 0;
+    padding: 15px 5px;
     position: relative;
     text-align: center;
     transition: opacity 500ms ease;
@@ -43,7 +43,8 @@
 
 .expanded .iapp-politician-index-sort-buttons {
     display: block;
-    margin: 0 20px;
+    margin: 0 auto;
+    width: 300px;
 }
 
 .iapp-politician-index-sort-label {
@@ -56,7 +57,7 @@
     padding: 5px;
 
     &.selected {
-        background: $blue2;
+        background: $medium-grey;
         color: white;
     }
 }

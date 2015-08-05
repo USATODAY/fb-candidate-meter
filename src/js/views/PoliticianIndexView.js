@@ -15,7 +15,7 @@ define([
             this.listenTo(Backbone, "window:resize", this.resize);
         },
         template: templates["politicianIndex.html"],
-        className: "iapp-politician-index",
+        className: "iapp-politician-index expanded",
         render: function() {
             var _this = this;
 

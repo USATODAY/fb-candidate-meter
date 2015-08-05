@@ -9,9 +9,13 @@ $itemSize: 60px;
 }
 
 .item-selected .iapp-politician-index-item {
-    opacity: 0.5;
+    .iapp-politician-item-portrait {
+        opacity: 0.5;
+    }
     &.selected {
-        opacity: 1;
+        .iapp-politician-item-portrait {
+            opacity: 1;
+        }
     }
 }
 
@@ -41,6 +45,7 @@ $itemSize: 60px;
     font-family: "Futura Today Light", Arial, sans-serif;
     font-size: 0.8em;
     font-weight: 400;
+    margin: 5px 0 10px 0;
 }
 
 .iapp-politician-item-trend {
