@@ -18,6 +18,10 @@ define(
                     // make Isotope a jQuery plugin
                     jQuery.bridget('isotope', Isotope);
 
+                    if (window != window.parent) {
+                        $("html").addClass("embed");
+                    }
+
                     var overviewData = new DataManager(config.dataDir + "data.json");
                     jQuery(window).on("resize", function() {
                         Backbone.trigger("window:resize");
